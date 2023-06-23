@@ -1,0 +1,234 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 100vh;
+	font-family: "Ubuntu", sans-serif;
+	background-color: #333;
+	overflow: hidden;
+}
+
+button {
+	position: relative;
+	margin: 20px;
+	padding: 50px 50px;
+	width: 150px;
+	background: none;
+	border: 1px solid wheat;
+	border-radius: 25px;
+	color: white;
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+button::after,
+button::before {
+	display: block;
+	position: absolute;
+	content: "";
+	transition: all 4s;
+	z-index: -1;
+}
+
+.slide {
+	position: absolute;
+	left: 10%;
+}
+
+.slide::after {
+	height: 100%;
+	top: 0;
+	left: -20px;
+	border: 1px solid wheat;
+}
+
+.slide::before {
+	width: 100%;
+	top: -10px;
+	left: 0;
+	border: 1px solid wheat;
+}
+
+.slide:hover::after {
+	left: 200px;
+}
+
+.slide:hover::before {
+	top: 150px;
+}
+
+.span2,
+.span1 {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.span1 {
+	left: 50%;
+	transition: 2s;
+}
+.span2 {
+	left: -50%;
+	transition: 3s;
+}
+
+.slide:hover .span2 {
+	left: 50%;
+}
+
+.slide:hover .span1 {
+	left: 240px;
+}
+
+// .slice{
+
+// }
+
+.slice::after {
+	height: 50%;
+	top: 0;
+	left: -2px;
+	border: 1px solid rgb(21, 62, 174);
+	background: rgb(21, 62, 174);
+}
+
+.slice::before {
+	height: 50%;
+	bottom: 0;
+	right: -2px;
+	border: 1px solid rgb(21, 62, 174);
+	background: rgb(21, 62, 174);
+}
+
+.slice:hover::after,
+.slice:hover::before {
+	animation: bacground 0.5s 0.2s forwards;
+}
+
+@keyframes bacground {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 102%;
+	}
+}
+
+.hmm {
+	border: none;
+	transition: 0.5s;
+}
+
+.hmm:hover {
+	box-shadow: 2px 3px 5px white, inset 2px 3px 5px rgb(20, 20, 20);
+}
+
+// .border {
+// 	border-radius: 0;
+// 	overflow: visible;
+// 	transition: all 1s;
+// 	// transition: 0.5s;
+// }
+
+// .border::after,
+// .border::before {
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+// .border::after {
+// 	bottom: 0;
+// 	right: 0;
+// }
+
+// .border:hover::after {
+// 	bottom: -10px;
+// 	right: -10px;
+// 	border-bottom: 5px solid #ce1414;
+// 	border-right: 5px solid #ce1414;
+// }
+
+// .border::before {
+// 	top: 0;
+// 	right: 0;
+
+// }
+
+// .border:hover::before {
+// 	top: -10px;
+// 	right: 10px;
+
+// }
+
+.border {
+	border-radius: 0;
+	overflow: visible;
+	transition: 2s;
+}
+
+.border::after,
+.border::before {
+	width: 100%;
+	height: 100%;
+}
+
+.border::after {
+	bottom: 0;
+	right: 0;
+}
+
+.border:hover::after {
+	bottom: -10px;
+	right: -10px;
+	border-bottom: 5px solid #ce1414;
+	border-right: 5px solid #ce1414;
+}
+
+.border::before {
+	top: 0;
+	left: 0;
+	// border-top: 5px solid #ce1414;
+}
+
+.border:hover::before {
+	top: -10px;
+	left: -10px;
+	border-top: 5px solid #ce1414;
+	border-left: 5px solid #ce1414;
+}
+
+.border:hover {
+	border: 1px solid transparent;
+}
+
+// .button {
+// 	transition: all 0.1s;
+// }
+
+.glass::before {
+	transition: all 1.2s;
+	top: 0;
+	left: -260px;
+	width: 120%;
+	height: 100%;
+	background-image: linear-gradient(
+		-90deg,
+		rgba(255, 255, 255, 0.3),
+		rgba(255, 255, 255, 0)
+	);
+	transform: rotate(-70deg);
+}
+
+.glass:hover::before {
+	left: 130%;
+}
